@@ -1,70 +1,26 @@
-# Getting Started with Create React App
+# Frontend Example APP
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+The exercise consists of developing a basic frontend app to fetch users from an API and display them in a grid of cards with a name filter. The filter should display only the card with names including the search.
 
-## Available Scripts
+## UI requirements:
+- User must be displayed as a card, with a rounded avatar picture. You may copy designs from the internet (e.g. like dribbble)
+- The grid must be responsive (e.g. 1 column on mobile, 2-3 column on tablets, 4+ column on desktop)
 
-In the project directory, you can run:
+You can use a fake user API like this one:
+https://jsonplaceholder.typicode.com/users
 
-### `npm start`
+You may also use a service to generate random pictures:
+https://i.pravatar.cc/300?u=some-random-id
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Code requirements:
+- It will be tested in latest Chrome only.
+- It must be a React app. You can use any tool to create the project (create-react-app, next.js, ...)
+- You can use any css solution you want (class based styles, css modules, react style prop, css-in-js). We recommend a css-in-js solution like `styled-components` or `emotion`.
+- You should not use a component library (e.g. tailwind UI, KendoUI...), the goal is to design the card from scratch with css
+- You can use an icon library if needed. We recommend Heroicons because you can simply paste the icon svg (and manage the `width` and `height` in css to avoid dependency on tailwind).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## What will be evaluated:
+- The app should work
+- The design of the user card (no alignement issues, margin problems)
+- Code organization: even if it's a small project, different responsibilities should be obvious (fetching users, managing a grid, user card design)
+- Commit names should be clean (we do not expect 50 commits, but avoid WIP commits in the history)
