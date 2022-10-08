@@ -23,4 +23,4 @@ https://i.pravatar.cc/300?u=some-random-id
 - The app should work
 - The design of the user card (no alignement issues, margin problems)
 - Code organization: even if it's a small project, different responsibilities should be obvious (fetching users, managing a grid, user card design)
-- Commit names should be clean (we do not expect 50 commits, but avoid WIP commits in the history)
+- Commit names should be clean (we do not expect 50 commits, but avoid WIP commits in the history) 
