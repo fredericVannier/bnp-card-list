@@ -1,50 +1,86 @@
 import React from "react";
 import styled from "styled-components";
-
-const Image = styled.div`
-width: 38%;
-height: 100%;
-//background-image: url('./testreact.jpg');
-background-color: lightgrey;
-border-radius: 10px 0px 0px 10px;
-`;
+import { FcBriefcase, FcPhoneAndroid, FcReddit } from "react-icons/fc";
+import { IconContext } from "react-icons";
 
 const CardItemContainer = styled.div`
-display: flex;
-margin: 10px;
-border-radius: 10px;
-height: 130px;
-background-color: white;
-max-width: 320px;
+  display: flex;
+  justify-content: space-between;
+  margin: 15px;
+  border-radius: 5px;
+  height: 150px;
+  background-color: white;
+  width: 340px;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+`;
+
+const TextSection = styled.div`
+  width: 200px;
 `;
 
 const Name = styled.div`
-    color: #4e4d4d;
-    font-weight: 600;
-    margin-left: 5px;
-    font-size: 18px;
-    font-weight: 800;
+  color: #202020;
+  font-weight: 600;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 20px 0px 10px 15px;
 `;
 
 const UserInfo = styled.div`
-    color: lightgrey;
-    font-weight: 400;
-    margin-left: 5px;
+  display: flex;
+  color: lightgrey;
+  font-size: 13px;
+  font-weight: 400;
+  margin-left: 15px;
 `;
 
-const CardItem = (items) => {
-  const { address, company, email, id, name, phone, username, website } = items;
+const Image = styled.div`
+  background-image: url("https://media.istockphoto.com/photos/millennial-male-team-leader-organize-virtual-workshop-with-employees-picture-id1300972574?b=1&k=20&m=1300972574&s=170667a&w=0&h=2nBGC7tr0kWIU8zRQ3dMg-C5JLo9H2sNUuDjQ5mlYfo=");
+  background-size: cover;
+  background-position: center;
+  width: 38%;
+  height: 100%;
+  border-radius: 3px 0px 0px 3px;
+`;
+
+const IconContainer = styled.div`
+  margin-right: 5px;
+`;
+
+const CardItem = (props) => {
+  const { company, name, phone, website } = props;
 
   return (
-    <CardItemContainer className="cardItemContainer">
-      <Image className="pictureContainer"></Image>
+    <IconContext.Provider value={{ color: "#219afa", size: "16px" }}>
+      <CardItemContainer className="cardItemContainer">
+        <Image />
 
-      <section className="textSection">
-        <Name>{name}</Name>
-        <UserInfo>{phone}</UserInfo>
-        <UserInfo>{website}</UserInfo>
-      </section>
-    </CardItemContainer>
+        <TextSection className="textSection">
+          <Name>{name}</Name>
+
+          <UserInfo>
+            <IconContainer>
+              <FcBriefcase />
+            </IconContainer>
+            {company.name}
+          </UserInfo>
+
+          <UserInfo>
+            <IconContainer>
+              <FcPhoneAndroid />
+            </IconContainer>
+            {phone}
+          </UserInfo>
+
+          <UserInfo>
+            <IconContainer>
+              <FcReddit />
+            </IconContainer>
+            {website}
+          </UserInfo>
+        </TextSection>
+      </CardItemContainer>
+    </IconContext.Provider>
   );
 };
 

@@ -1,29 +1,35 @@
-import React, { useEffect, useState } from 'react';
-import axios from 'axios';
-import CardItem from './CardItem';
+import React from "react";
+import CardItem from "./CardItem";
+import styled from "styled-components";
 
-const CardContainer = () => {
+const CardContainer = (items) => {
+  const Grid = styled.div`
+    display: grid;
 
-    const [data, setData] = useState([{ hits : { results : [] } }]);
-    
+    @media (min-width: 320px) {
+      grid-template-columns: ${({ col }) => `repeat(1, 1fr)`};
+    }
+    @media (min-width: 641px) {
+      grid-template-columns: ${({ col }) => `repeat(2, 1fr)`};
+    }
+    @media (min-width: 961px) {
+      grid-template-columns: ${({ col }) => `repeat(2, 1fr)`};
+    }
+    @media (min-width: 1025px) {
+      grid-template-columns: ${({ col }) => `repeat(${col}, 1fr)`};
+    }
+    @media (min-width: 1281px) {
+      grid-template-columns: ${({ col }) => `repeat(${col}, 1fr)`};
+    }
+  `;
 
-    useEffect(() => {
-        const fetchData = async () => {
-            const result = await axios('https://jsonplaceholder.typicode.com/users')
-            setData(result.data);
-        };
-        fetchData();
-    }, [])
-
-
-    return (
-        <div>
-            <p>card item</p>
-            {data.map((item, index) => (
-              <CardItem {...item} key={index}/>
-            ))}
-        </div>
-    );
+  return (
+    <Grid col={3}>
+      {items.map((item) => (
+        <CardItem {...items} key={items.id} />
+      ))}
+    </Grid>
+  );
 };
 
 export default CardContainer;
