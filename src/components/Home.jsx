@@ -1,3 +1,4 @@
+import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 import CardItem from "./CardItem";
@@ -46,15 +47,15 @@ const Home = (props) => {
         placeholder="Search for people..."
         onChange={(e) => {
           e.preventDefault();
-          setQuery(e.target.value);
+          setQuery(e.target.value.toLowerCase());
         }}
       />
 
       <Grid col={3}>
         {users
           .filter((user) => user.name.toLowerCase().includes(query))
-          .map((item, index) => (
-            <div>
+          .map((item) => (
+            <div key={item.id}>
               <CardItem {...item} />
             </div>
           ))}
