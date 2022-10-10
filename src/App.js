@@ -2,6 +2,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import "./App.css";
 import Home from "./components/Home";
+import Header from "./components/Header";
 
 const useFetch = () => {
   const [data, setData] = useState([]);
@@ -22,16 +23,16 @@ const useFetch = () => {
     fetchData();
   }, []);
 
-  return data
+  return data;
 };
 
 function App() {
-
   const data = useFetch();
 
   return (
     <div className="App">
       <header className="App-header">
+        <Header />
         {data.length > 0 ? <Home users={data} /> : <h2>Loading..</h2>}
       </header>
     </div>
