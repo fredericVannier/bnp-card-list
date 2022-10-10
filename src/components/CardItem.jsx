@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import { FcBriefcase, FcPhoneAndroid, FcReddit } from "react-icons/fc";
 import { IconContext } from "react-icons";
+import AddButton from "./AddButton";
 
 const CardItemContainer = styled.div`
   display: flex;
@@ -12,6 +13,7 @@ const CardItemContainer = styled.div`
   background-color: white;
   width: 340px;
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
 `;
 
 const TextSection = styled.div`
@@ -50,7 +52,7 @@ const CardItem = (props) => {
   const { company, name, phone, website, image } = props;
 
   return (
-    <IconContext.Provider value={{ color: "#219afa", size: "16px" }}>
+    <IconContext.Provider value={{ size: "16px" }}>
       <CardItemContainer className="cardItemContainer">
         <Image url={image.urls.small} />
 
@@ -64,7 +66,7 @@ const CardItem = (props) => {
             {company.name}
           </UserInfo>
 
-          <UserInfo>
+          <UserInfo className="phoneRule">
             <IconContainer>
               <FcPhoneAndroid />
             </IconContainer>
@@ -78,6 +80,8 @@ const CardItem = (props) => {
             {website}
           </UserInfo>
         </TextSection>
+
+        <AddButton />
       </CardItemContainer>
     </IconContext.Provider>
   );

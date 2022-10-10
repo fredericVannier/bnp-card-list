@@ -2,15 +2,16 @@ import React from "react";
 import styled from "styled-components";
 
 const HeaderContainer = styled.div`
-display: flex;
-flex-direction: column;
-align-items: center;
-justify-content: center;
-  background-image: linear-gradient(90deg, #2491ee, #1cc7f2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: linear-gradient(51deg, #2491ee, #1cc7f2);
   height: 110px;
   box-shadow: 0px 13px 55px -18px rgba(77, 77, 77, 0.66);
   border-radius: 0px 0px 10px 10px;
 `;
+
 const ListContainer = styled.div`
   display: flex;
   justify-content: space-evenly;
