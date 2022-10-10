@@ -17,7 +17,7 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {data.length < 0 ? <h2>Loading..</h2> : <Home users={data} />}
+        {data.length > 0 ? <Home users={data} /> : <h2>Loading..</h2>}
       </header>
     </div>
   );
