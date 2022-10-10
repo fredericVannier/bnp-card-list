@@ -35,8 +35,7 @@ const UserInfo = styled.div`
 `;
 
 const Image = styled.div`
-  background-image: url("https://media.istockphoto.com/photos/millennial-male-team-leader-organize-virtual-workshop-with-employees-picture-id1300972574?b=1&k=20&m=1300972574&s=170667a&w=0&h=2nBGC7tr0kWIU8zRQ3dMg-C5JLo9H2sNUuDjQ5mlYfo=");
-  background-size: cover;
+  background-image: url(${(props) => props.url});
   background-position: center;
   width: 38%;
   height: 100%;
@@ -48,12 +47,12 @@ const IconContainer = styled.div`
 `;
 
 const CardItem = (props) => {
-  const { company, name, phone, website } = props;
+  const { company, name, phone, website, image } = props;
 
   return (
     <IconContext.Provider value={{ color: "#219afa", size: "16px" }}>
       <CardItemContainer className="cardItemContainer">
-        <Image />
+        <Image url={image.urls.small} />
 
         <TextSection className="textSection">
           <Name>{name}</Name>
