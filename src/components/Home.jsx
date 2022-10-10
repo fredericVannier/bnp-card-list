@@ -1,4 +1,3 @@
-import axios from "axios";
 import React, { useState } from "react";
 import styled from "styled-components";
 import CardItem from "./CardItem";
@@ -15,24 +14,19 @@ const Grid = styled.div`
   padding-right: 5%;
 
   @media (min-width: 320px) {
-    grid-template-columns: ${({ col }) =>
-      `repeat(1, 1fr)`}; /* smartphones, iPhone, portrait 480x320 phones */
+    grid-template-columns: ${({ col }) => `repeat(1, 1fr)`};
   }
   @media (min-width: 641px) {
-    grid-template-columns: ${({ col }) =>
-      `repeat(2, 1fr)`}; /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+    grid-template-columns: ${({ col }) => `repeat(2, 1fr)`};
   }
   @media (min-width: 961px) {
-    grid-template-columns: ${({ col }) =>
-      `repeat(2, 1fr)`}; /* tablet, landscape iPad, lo-res laptops ands desktops */
+    grid-template-columns: ${({ col }) => `repeat(2, 1fr)`};
   }
   @media (min-width: 1025px) {
-    grid-template-columns: ${({ col }) =>
-      `repeat(${col}, 1fr)`}; /* big landscape tablets, laptops, and desktops */
+    grid-template-columns: ${({ col }) => `repeat(${col}, 1fr)`};
   }
   @media (min-width: 1281px) {
-    grid-template-columns: ${({ col }) =>
-      `repeat(${col}, 1fr)`}; /* hi-res laptops and desktops */
+    grid-template-columns: ${({ col }) => `repeat(${col}, 1fr)`};
   }
 `;
 
