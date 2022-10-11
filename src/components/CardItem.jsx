@@ -53,10 +53,10 @@ const CardItem = (props) => {
 
   return (
     <IconContext.Provider value={{ size: "16px" }}>
-      <CardItemContainer className="cardItemContainer">
+      <CardItemContainer>
         <Image url={image.urls.small} />
 
-        <TextSection className="textSection">
+        <TextSection>
           <Name>{name}</Name>
 
           <UserInfo>
